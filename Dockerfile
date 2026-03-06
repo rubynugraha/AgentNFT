@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 
 # Copy source code
 COPY . .
@@ -35,7 +35,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Install only production dependencies
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --prod
 
 # Copy built application from base stage
 COPY --from=base /app/.next ./.next
