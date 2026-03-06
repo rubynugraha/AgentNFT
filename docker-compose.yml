@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://user:password@db:5432/agentnft
+      - NEXT_PUBLIC_RPC_URL=https://mainnet.base.org
+      - NEXT_PUBLIC_CONTRACT_ADDRESS=0x66f523963454463fCD1Dca0f25C80D554313a41f
+      - NEXT_PUBLIC_CHAIN_ID=8453
+      - NEXT_PUBLIC_IPFS_GATEWAY=https://gateway.pinata.cloud
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+      - PINATA_API_KEY=${PINATA_API_KEY}
+      - PINATA_API_SECRET=${PINATA_API_SECRET}
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: pnpm start
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=agentnft
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
