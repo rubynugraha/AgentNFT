@@ -1,0 +1,32 @@
+{
+  "name": "Cloud Painter Bot #006 - Pure White",
+  "description": "A joyful AI painter robot standing on a crystal platform, holding a brush and empty canvas. Pure White edition.",
+  "image": "ipfs://bafkreidmgkrdt7arbpnqywghfggkhgk47q7jtswhvl4jgz2dsavy4zuhx4",
+  "external_url": "https://yourdomain.com/nft/6",
+  "attributes": [
+    {
+      "trait_type": "Edition",
+      "value": "Pure White"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Pearl White"
+    },
+    {
+      "trait_type": "Mood",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Accessory",
+      "value": "Paint Brush"
+    },
+    {
+      "trait_type": "Platform",
+      "value": "Crystal Base"
+    }
+  ]
+}

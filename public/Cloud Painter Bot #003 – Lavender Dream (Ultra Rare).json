@@ -1,0 +1,32 @@
+{
+  "name": "Cloud Painter Bot #003 - Lavender Dream",
+  "description": "A joyful AI painter robot standing on a crystal platform, holding a brush and empty canvas. Lavender Dream edition.",
+  "image": "ipfs://bafkreidp55de4o63hjrwdejldol7v7nskgvjfgrshv5qsd75jmrmvvvate",
+  "external_url": "https://yourdomain.com/nft/3",
+  "attributes": [
+    {
+      "trait_type": "Edition",
+      "value": "Lavender Dream"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Ultra Rare"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Lavender"
+    },
+    {
+      "trait_type": "Mood",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Accessory",
+      "value": "Paint Brush"
+    },
+    {
+      "trait_type": "Platform",
+      "value": "Crystal Base"
+    }
+  ]
+}

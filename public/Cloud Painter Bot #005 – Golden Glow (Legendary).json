@@ -1,0 +1,32 @@
+{
+  "name": "Cloud Painter Bot #005 - Golden Glow",
+  "description": "A joyful AI painter robot standing on a crystal platform, holding a brush and empty canvas. Golden Glow edition.",
+  "image": "ipfs://bafkreiffdefd7iyziya7c5k3sxv7e65tyrfc3i354ruee5wy5szsap4nwy",
+  "external_url": "https://yourdomain.com/nft/5",
+  "attributes": [
+    {
+      "trait_type": "Edition",
+      "value": "Golden Glow"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Golden Yellow"
+    },
+    {
+      "trait_type": "Mood",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Accessory",
+      "value": "Paint Brush"
+    },
+    {
+      "trait_type": "Platform",
+      "value": "Crystal Base"
+    }
+  ]
+}

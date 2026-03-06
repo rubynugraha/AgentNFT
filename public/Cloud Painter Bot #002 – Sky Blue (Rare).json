@@ -1,0 +1,32 @@
+{
+  "name": "Cloud Painter Bot #001 - Blush Pink",
+  "description": "A joyful AI painter robot standing on a crystal platform, holding a brush and empty canvas. Blush Pink edition.",
+  "image": "ipfs://bafkreih3f4au6copqmwisowv47evygdce7lbl264yjhzbvwpghfdhwb5ty",
+  "external_url": "https://yourdomain.com/nft/1",
+  "attributes": [
+    {
+      "trait_type": "Edition",
+      "value": "Blush Pink"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Blush Pink"
+    },
+    {
+      "trait_type": "Mood",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Accessory",
+      "value": "Paint Brush"
+    },
+    {
+      "trait_type": "Platform",
+      "value": "Crystal Base"
+    }
+  ]
+}

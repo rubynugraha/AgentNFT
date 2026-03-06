@@ -1,0 +1,255 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --primary: #00d4ff;
+  --primary-foreground: #000000;
+  --secondary: #7c3aed;
+  --secondary-foreground: #ffffff;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #00d4ff;
+  --accent-foreground: #000000;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #27272a;
+  --input: #18181b;
+  --ring: #00d4ff;
+  --chart-1: #00d4ff;
+  --chart-2: #7c3aed;
+  --chart-3: #ec4899;
+  --chart-4: #f59e0b;
+  --chart-5: #10b981;
+  --radius: 0.625rem;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00d4ff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #7c3aed;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #00d4ff;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --primary: #00d4ff;
+  --primary-foreground: #000000;
+  --secondary: #7c3aed;
+  --secondary-foreground: #ffffff;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #00d4ff;
+  --accent-foreground: #000000;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #27272a;
+  --input: #18181b;
+  --ring: #00d4ff;
+  --chart-1: #00d4ff;
+  --chart-2: #7c3aed;
+  --chart-3: #ec4899;
+  --chart-4: #f59e0b;
+  --chart-5: #10b981;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00d4ff;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #7c3aed;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #00d4ff;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Futuristic NFT App Styles */
+@layer components {
+  .glow-border {
+    @apply border border-accent/20 rounded-lg bg-gradient-to-br from-card to-card shadow-lg;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1), inset 0 0 20px rgba(0, 212, 255, 0.05);
+  }
+
+  .glow-border-active {
+    @apply border border-accent shadow-lg;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+
+  .glow-text {
+    @apply text-accent font-bold;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+
+  .btn-glow {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 bg-accent text-accent-foreground hover:shadow-lg;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6), inset 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+
+  .btn-secondary-glow {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 bg-secondary text-secondary-foreground hover:shadow-lg border border-secondary;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  }
+
+  .btn-secondary-glow:hover {
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.6), inset 0 0 20px rgba(124, 58, 237, 0.1);
+  }
+
+  .countdown-timer {
+    @apply text-3xl md:text-4xl font-bold text-accent text-center;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+
+  .card-nft {
+    @apply border border-accent/20 rounded-lg bg-gradient-to-br from-card to-card p-6 transition-all duration-300;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1), inset 0 0 20px rgba(0, 212, 255, 0.05);
+  }
+
+  .card-nft:hover {
+    transform: translateY(-5px);
+    border-color: rgb(0, 212, 255);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+
+  .card-nft:hover {
+    transform: translateY(-5px);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-center mb-4;
+  }
+
+  /* Enhanced animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  /* Stagger animations */
+  .stagger-child {
+    animation: slide-up 0.6s ease-out backwards;
+  }
+
+  .stagger-child:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-child:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-child:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-child:nth-child(4) { animation-delay: 0.4s; }
+}

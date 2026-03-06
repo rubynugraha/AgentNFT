@@ -1,0 +1,57 @@
+{
+  "name": "Cloud Painter Bot Collection Provenance",
+  "description": "Official provenance document for the Cloud Painter Bot NFT collection. This document records the hash of each NFT's metadata in mint order.",
+  "collectionCID": "bafybeidabsltfjerfciezywdowt2uqojwm5rnpor2yowylanbxpymesvoe",
+  "totalItems": 6,
+  "generatedAt": "2024-01-01T00:00:00Z",
+  "items": [
+    {
+      "tokenId": 1,
+      "name": "Cloud Painter Bot #001 - Blush Pink",
+      "rarity": "Rare",
+      "imageIPFS": "ipfs://bafkreigq6stwlposoecd5lvk2m7apb2w2urkgvg2zm34cdvuclmpfqdmfq",
+      "metadataHash": "b33c41371065d97942f1068f277ebba6ef25f60ac029f1a01181a7fd2a49606f",
+      "mintOrder": 1
+    },
+    {
+      "tokenId": 2,
+      "name": "Cloud Painter Bot #002 - Sky Blue",
+      "rarity": "Rare",
+      "imageIPFS": "ipfs://bafkreih3f4au6copqmwisowv47evygdce7lbl264yjhzbvwpghfdhwb5ty",
+      "metadataHash": "ea45ca35f846f330a43d1b6a6deeb27b99fe39c924cbd49401b7b734251c0493",
+      "mintOrder": 2
+    },
+    {
+      "tokenId": 3,
+      "name": "Cloud Painter Bot #003 - Lavender Dream",
+      "rarity": "Ultra Rare",
+      "imageIPFS": "ipfs://bafkreidp55de4o63hjrwdejldol7v7nskgvjfgrshv5qsd75jmrmvvvate",
+      "metadataHash": "01d1acbfa66e7bd9c2dbc5447173000a3c9226703a779b8ea9c34b1304550df8",
+      "mintOrder": 3
+    },
+    {
+      "tokenId": 4,
+      "name": "Cloud Painter Bot #004 - Sunset Coral",
+      "rarity": "Epic",
+      "imageIPFS": "ipfs://bafkreiaa4xev4elzl7zih2otrm7ibngbmizlk7cq5famidfvaqfg46vjmi",
+      "metadataHash": "9c6914e510f87dc62cd4b15f99e868dfa095a6e91c8df3d459aa946c1c3709b7",
+      "mintOrder": 4
+    },
+    {
+      "tokenId": 5,
+      "name": "Cloud Painter Bot #005 - Golden Glow",
+      "rarity": "Legendary",
+      "imageIPFS": "ipfs://bafkreiffdefd7iyziya7c5k3sxv7e65tyrfc3i354ruee5wy5szsap4nwy",
+      "metadataHash": "d9922271a76e42b4093fc13c92b738eecb626396dbb9d0f65ac1b64f9145ab8b",
+      "mintOrder": 5
+    },
+    {
+      "tokenId": 6,
+      "name": "Cloud Painter Bot #006 - Pure White",
+      "rarity": "Common",
+      "imageIPFS": "ipfs://bafkreidmgkrdt7arbpnqywghfggkhgk47q7jtswhvl4jgz2dsavy4zuhx4",
+      "metadataHash": "4e154e01688fbe9abb1195267d1c9dedeaf475552d4b1ef84b9ade987d45b593",
+      "mintOrder": 6
+    }
+  ]
+}
