@@ -37,8 +37,8 @@ export default function MintingInterface({ walletAddress, signer, onDisconnect }
 
   useEffect(() => {
     const fetchInfo = async () => {
-      const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || '';
-      const rpcUrl = process.env.NEXT_PUBLIC_RPC_URL || '';
+      const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || '0x21592f9C665d724ea65bCB91eC3AdD6cC68C74D1';
+      const rpcUrl = process.env.NEXT_PUBLIC_RPC_URL || 'https://mainnet.base.org';
 
       // inspect RPC network first
       try {
