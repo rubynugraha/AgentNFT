@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "init-db": "node scripts/init-db.js"
+    "init-db": "node scripts/init-db.js",
+    "enable-minting": "node scripts/enable-minting.js",
+    "check-status": "node scripts/check-status.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

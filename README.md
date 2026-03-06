@@ -280,6 +280,48 @@ nft_metadata
 - **Provenance Hash**: Authenticity verification for the collection
 - **Reveal Mechanism**: Two-phase reveal for fair rarity distribution
 
+### Enabling Minting
+
+By default, the smart contract deploys with public minting **disabled**. You must enable it before users can mint NFTs.
+
+#### Check Current Status
+
+First, check if minting is enabled:
+```bash
+pnpm check-status
+```
+
+This will show:
+- Contract owner address
+- Current total supply
+- Whether minting is enabled or disabled
+
+#### Using the Enable Script
+
+1. **Set your private key** (the contract owner's private key):
+   ```bash
+   export OWNER_PRIVATE_KEY=your_private_key_here
+   ```
+
+2. **Run the enable script**:
+   ```bash
+   pnpm enable-minting
+   # or
+   npm run enable-minting
+   ```
+
+3. **Verify**: The script will show the transaction hash and confirm minting is enabled.
+
+#### Manual Method (Advanced)
+
+If you prefer to enable minting manually:
+
+1. Connect to Base Mainnet with the contract owner's wallet
+2. Call the `togglePublicMint(true)` function on the contract
+3. Verify with `publicMintEnabled()` - should return `true`
+
+⚠️ **Security Warning**: Never share your private key or commit it to version control!
+
 ---
 
 ## API Endpoints
