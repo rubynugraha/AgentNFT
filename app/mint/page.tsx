@@ -77,9 +77,55 @@ export default function MintPage() {
             }
           } catch (switchError: any) {
             console.warn('Network switch error:', switchError);
-            setError(`Please switch your wallet to chain ID ${expectedChain} (Base Mainnet).`);
-            setIsLoading(false);
-            return;
+            
+            // If network not found (error code 4902), try to add it
+            if (switchError.code === 4902) {
+              try {
+                await ethereum.request({
+                  method: 'wallet_addEthereumChain',
+                  params: [{
+                    chainId: hexChain,
+                    chainName: 'Base',
+                    nativeCurrency: {
+                      name: 'Ether',
+                      symbol: 'ETH',
+                      decimals: 18,
+                    },
+                    rpcUrls: ['https://mainnet.base.org'],
+                    blockExplorerUrls: ['https://basescan.org'],
+                  }],
+                });
+                
+                // After adding, try switching again
+                await ethereum.request({
+                  method: 'wallet_switchEthereumChain',
+                  params: [{ chainId: hexChain }],
+                });
+                
+                // Verify the switch worked
+                const finalNetwork = await prov.getNetwork();
+                const finalChainNum = (() => {
+                  const x: any = finalNetwork.chainId;
+                  if (typeof x === 'string') {
+                    return x.startsWith('0x') ? parseInt(x, 16) : Number(x);
+                  }
+                  return Number(x);
+                })();
+                
+                if (finalChainNum !== expectedChain) {
+                  throw new Error('network switch failed after adding');
+                }
+              } catch (addError: any) {
+                console.warn('Failed to add Base network:', addError);
+                setError(`Please manually add Base Mainnet to your wallet and switch to it. Chain ID: ${expectedChain}`);
+                setIsLoading(false);
+                return;
+              }
+            } else {
+              setError(`Please switch your wallet to chain ID ${expectedChain} (Base Mainnet).`);
+              setIsLoading(false);
+              return;
+            }
           }
         }
 
