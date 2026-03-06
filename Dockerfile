@@ -16,6 +16,9 @@ RUN pnpm install --frozen-lockfile
 # Copy source code
 COPY . .
 
+# Set NODE_ENV for build
+ENV NODE_ENV=production
+
 # Build the application
 RUN pnpm run build
 
