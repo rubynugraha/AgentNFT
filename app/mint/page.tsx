@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import MintingInterface from '@/components/minting-interface';
+import { getEthereumProvider, hasEthereumProvider } from '@/lib/wallet';
 
 export default function MintPage() {
   const [walletAddress, setWalletAddress] = useState('');
@@ -30,10 +31,10 @@ export default function MintPage() {
     setError('');
 
     // try wallet provider first
-    const anyWindow: any = window;
-    if (anyWindow.ethereum) {
+    const ethereum = getEthereumProvider();
+    if (ethereum) {
       try {
-        const prov = new ethers.BrowserProvider(anyWindow.ethereum as any);
+        const prov = new ethers.BrowserProvider(ethereum);
         const accounts: string[] = await prov.send('eth_requestAccounts', []);
         const address = accounts[0];
         const network = await prov.getNetwork();
@@ -57,7 +58,7 @@ export default function MintPage() {
           // hex value for chain id (ethers.hexValue not exported in v6)
           const hexChain = '0x' + expectedChain.toString(16);
           try {
-            await anyWindow.ethereum.request({
+            await ethereum.request({
               method: 'wallet_switchEthereumChain',
               params: [{ chainId: hexChain }],
             });
@@ -125,8 +126,13 @@ export default function MintPage() {
 
   useEffect(() => {
     // determine if a Web3 provider is injected (client only)
-    if (typeof window !== 'undefined' && (window as any).ethereum) {
-      setHasEthereum(true);
+    try {
+      if (hasEthereumProvider()) {
+        setHasEthereum(true);
+      }
+    } catch (error) {
+      console.warn('Error detecting Ethereum provider:', error);
+      // Continue without ethereum detection
     }
 
     const saved = localStorage.getItem('userWallet');
