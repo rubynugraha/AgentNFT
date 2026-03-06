@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 
+export const dynamic = 'force-dynamic';
+
 export default function GlobalError({
   error,
   reset,
@@ -15,14 +17,10 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html>
-      <body>
-        <div style={{ padding: '20px', textAlign: 'center' }}>
-          <h1>Something went wrong!</h1>
-          <p>{error.message}</p>
-          <button onClick={() => reset()}>Try again</button>
-        </div>
-      </body>
-    </html>
+    <div style={{ padding: '20px', textAlign: 'center' }}>
+      <h1>Something went wrong!</h1>
+      <p>{error.message}</p>
+      <button onClick={() => reset()}>Try again</button>
+    </div>
   );
 }
